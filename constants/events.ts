@@ -1,6 +1,14 @@
-export const events = [
+export interface Event {
+  name: string;
+  description: string;
+  date:string;
+  time:string;
+  location:string;
+  category: string;
+}
+export const events: Event[]= [
   {
-    name: "Conferencia de Desarrollo Web 2025",
+    name: "Conferencia de Desarrollo Web 2026",
     description:
       "Charlas sobre React, Vue, y el futuro del desarrollo frontend.",
     date: "2025-09-15",
@@ -211,3 +219,5 @@ export const events = [
     category: "Cultura",
   },
 ];
+
+
