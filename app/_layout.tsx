@@ -12,8 +12,8 @@ export default function RootLayout() {
   const insets = useSafeAreaInsets();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <GluestackUIProvider mode="dark">
+    <GluestackUIProvider mode="dark">
+      <QueryClientProvider client={queryClient}>
         <View
           style={{
             flex: 1,
@@ -24,7 +24,7 @@ export default function RootLayout() {
         >
           <Stack />
         </View>
-      </GluestackUIProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </GluestackUIProvider>
   );
 }

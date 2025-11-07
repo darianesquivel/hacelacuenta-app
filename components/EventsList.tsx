@@ -1,6 +1,6 @@
 import { useEvents } from "@/hooks/useEvents";
 import { ScrollView, View } from "react-native";
-import CreateEventButton from "./CreateEventButton";
+import { CreateEventButton } from "./CreateEventButton";
 import EventCard from "./EventCard";
 import { Heading } from "./ui/heading";
 import { Text } from "./ui/text";

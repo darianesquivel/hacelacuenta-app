@@ -1,22 +1,30 @@
 module.exports = function (api) {
   api.cache(true);
-
   return {
-    presets: [['babel-preset-expo'], 'nativewind/babel'],
-
+    presets: [["babel-preset-expo"], "nativewind/babel"],
     plugins: [
       [
-        'module-resolver',
+        "module:react-native-dotenv",
         {
-          root: ['./'],
-
+          moduleName: "@env",
+          path: ".env",
+          blacklist: null,
+          whitelist: null,
+          safe: false,
+          allowUndefined: true,
+        },
+      ],
+      [
+        "module-resolver",
+        {
+          root: ["./"],
           alias: {
-            '@': './',
-            'tailwind.config': './tailwind.config.js',
+            "@": "./",
+            "tailwind.config": "./tailwind.config.js",
           },
         },
       ],
-      'react-native-worklets/plugin',
+      "react-native-worklets/plugin",
     ],
   };
 };

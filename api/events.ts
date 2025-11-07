@@ -13,8 +13,6 @@ import { app } from "./firebaseConfig";
 
 const db = getFirestore(app);
 
-// EVENTS
-
 export interface Event {
   id: string;
   name: string;
@@ -31,6 +29,10 @@ interface EventDataFromFirestore {
 }
 
 const getEventsCollectionRef = () => collection(db, "events");
+
+///////////////////
+//  GET EVENTS  //
+/////////////////
 
 export async function getEvents() {
   const ref = collection(db, "events");
@@ -50,6 +52,10 @@ export async function getEvents() {
   return eventsList;
 }
 
+///////////////////////
+//  GET EVENT BY ID  //
+///////////////////////
+
 export async function getEventById(eventId: string) {
   console.log("getEventById => eventId", eventId);
   const ref = doc(db, "events", eventId);
@@ -68,6 +74,10 @@ export async function getEventById(eventId: string) {
     createdAt: data.createdAt.toDate(),
   } as Event;
 }
+
+/////////////////////
+//  CREATE EVENT  //
+///////////////////
 
 export async function creeateEvent(data: Event) {
   const newEvent = {
